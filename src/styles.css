@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #001f4d, #003366); /* Navy blue */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  background: #ffffff;
+  color: #222;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  color: #001f4d;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.location-info {
+  font-weight: bold;
+  margin: 16px 0;
+  color: #003366;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  text-decoration: none;
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.tip {
+  font-size: 13px;
+  color: #666;
+  margin-top: 15px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  .whatsapp-btn {
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+}
