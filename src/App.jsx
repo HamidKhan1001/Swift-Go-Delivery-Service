@@ -31,7 +31,7 @@ function App() {
 
           setLocationText(address);
 
-          const message = `Hi Tabedaar, I need bike service at:\n${address}\n${mapsLink}`;
+          const message = `Hi Swift Go Delivery Service, I need bike service at:\n${address}\n${mapsLink}`;
           setWhatsAppLink(
             `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
           );
@@ -84,7 +84,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>🚴 Tabedaar Bike Service</h1>
+      <h1>🚴 Swift Go Bike Service</h1>
       <p>We’ve detected your location:</p>
       <div className="location-info">📍 <strong>{locationText}</strong></div>
       <div id="map" ref={mapRef}></div>
