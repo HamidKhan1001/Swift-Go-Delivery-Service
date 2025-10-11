@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabedaar Bike Service</title>
+
+    <!-- ✅ Correct Vite-compatible Google Maps script -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapsApiKey %>"
+      src="https://maps.googleapis.com/maps/api/js?key=%VITE_GOOGLE_MAPS_API_KEY%"
+      async
       defer
     ></script>
+
+    <!-- (Optional) Add a favicon or meta tags -->
+    <meta name="description" content="Fast bike service at your location - Tabedaar" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- ✅ Main React entry -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
