@@ -6,7 +6,6 @@ function App() {
   const [locationText, setLocationText] = useState("Detecting your location...");
   const [whatsAppLink, setWhatsAppLink] = useState("");
   const mapRef = useRef(null);
-
   useEffect(() => {
     if (!navigator.geolocation) {
       setLocationText("Geolocation is not supported by your browser.");
