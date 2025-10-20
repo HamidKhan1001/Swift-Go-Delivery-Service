@@ -1,0 +1,23 @@
+name: Auto Commit Bot
+
+on:
+  schedule:
+    - cron: '25 7 * * *'  # 12:25 PM Pakistan time (07:25 UTC)
+  workflow_dispatch:       # allow manual runs
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Make changes
+        run: |
+          echo "Last updated: $(date -u)" > last_update.txt
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Auto update"
