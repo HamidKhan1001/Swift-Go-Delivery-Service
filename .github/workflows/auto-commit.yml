@@ -1,5 +1,4 @@
 name: Auto Commit Bot
-
 on:
   schedule:
     - cron: '25 7 * * *'  # 12:25 PM Pakistan time (07:25 UTC)
