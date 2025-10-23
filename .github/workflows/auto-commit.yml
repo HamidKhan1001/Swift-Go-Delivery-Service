@@ -2,15 +2,15 @@ name: Auto Commit Bot
 
 on:
   schedule:
-    - cron: '40 7 * * *'  # 12:25 PM Pakistan time (07:25 UTC)
-  workflow_dispatch:       # allow manual runs
+    - cron: '40 19 * * *'  # Runs daily at 12:40 AM Pakistan time (19:40 UTC)
+  workflow_dispatch:        # Allow manual trigger too
 
 jobs:
   auto-commit:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write   # REQUIRED for pushing changes
+      contents: write   # REQUIRED to push changes
 
     steps:
       - name: Checkout repo
@@ -25,4 +25,5 @@ jobs:
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🤖 Auto update"
+          commit_message: "Update"
+          branch: main
