@@ -1,16 +1,22 @@
 name: Auto Commit Bot
+
 on:
   schedule:
-    - cron: '25 7 * * *'  # 12:25 PM Pakistan time (07:25 UTC)
+    - cron: '40 7 * * *'  # 12:25 PM Pakistan time (07:25 UTC)
   workflow_dispatch:       # allow manual runs
 
 jobs:
   auto-commit:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write   # REQUIRED for pushing changes
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Make changes
         run: |
