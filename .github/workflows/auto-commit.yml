@@ -3,7 +3,7 @@ name: Auto Commit Bot
 on:
   schedule:
     - cron: '49 19 * * *'  # Runs daily at 12:40 AM Pakistan time (19:40 UTC)
-  workflow_dispatch:        # Allow manual trigger too
+  workflow_dispatch:        
 
 jobs:
   auto-commit:
