@@ -1,0 +1,73 @@
+{
+  "project": {
+    "name": "Swift Go Delivery Service",
+    "description": "Dispatch Pulse monitors delivery endpoints, records uptime snapshots, and publishes the results for the operations team.",
+    "cadence": "Daily at 02:40 UTC",
+    "output": "public/runtime/health.json"
+  },
+  "alertRules": [
+    {
+      "id": "overall-success-rate",
+      "label": "Overall success rate",
+      "scope": "summary",
+      "metric": "successRate",
+      "operator": "lt",
+      "threshold": 95,
+      "severity": "high"
+    },
+    {
+      "id": "core-latency",
+      "label": "Core latency",
+      "scope": "route",
+      "route": "core",
+      "metric": "averageLatencyMs",
+      "operator": "gt",
+      "threshold": 800,
+      "severity": "medium"
+    },
+    {
+      "id": "critical-route-availability",
+      "label": "Critical route availability",
+      "scope": "route",
+      "route": "core",
+      "metric": "successRate",
+      "operator": "lt",
+      "threshold": 100,
+      "severity": "high"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Order intake API",
+      "category": "Core",
+      "route": "core",
+      "url": "https://example.com",
+      "expectedStatus": 200,
+      "critical": true
+    },
+    {
+      "name": "Dispatch webhook relay",
+      "category": "Integrations",
+      "route": "integrations",
+      "url": "https://api.github.com",
+      "expectedStatus": 200,
+      "critical": true
+    },
+    {
+      "name": "Maps availability",
+      "category": "Dependencies",
+      "route": "core",
+      "url": "https://www.google.com/generate_204",
+      "expectedStatus": 204,
+      "critical": true
+    },
+    {
+      "name": "Docs host",
+      "category": "Docs",
+      "route": "docs",
+      "url": "https://vite.dev",
+      "expectedStatus": 200,
+      "critical": false
+    }
+  ]
+}
