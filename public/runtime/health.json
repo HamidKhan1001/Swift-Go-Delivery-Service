@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-10T04:16:28.523Z",
-  "nextRunAt": "2026-08-11T02:40:00.000Z",
+  "generatedAt": "2026-08-11T04:04:17.164Z",
+  "nextRunAt": "2026-08-12T02:40:00.000Z",
   "project": {
     "name": "Swift Go Delivery Service",
     "description": "Dispatch Pulse monitors delivery endpoints, records uptime snapshots, and publishes the results for the operations team.",
@@ -11,7 +11,7 @@
     "total": 4,
     "healthy": 4,
     "degraded": 0,
-    "averageLatencyMs": 81,
+    "averageLatencyMs": 128,
     "successRate": 100
   },
   "routeMetrics": [
@@ -21,7 +21,7 @@
       "total": 2,
       "healthy": 2,
       "degraded": 0,
-      "averageLatencyMs": 68,
+      "averageLatencyMs": 120,
       "successRate": 100
     },
     {
@@ -30,7 +30,7 @@
       "total": 1,
       "healthy": 1,
       "degraded": 0,
-      "averageLatencyMs": 82,
+      "averageLatencyMs": 99,
       "successRate": 100
     },
     {
@@ -39,7 +39,7 @@
       "total": 1,
       "healthy": 1,
       "degraded": 0,
-      "averageLatencyMs": 106,
+      "averageLatencyMs": 174,
       "successRate": 100
     }
   ],
@@ -65,7 +65,7 @@
       "operator": "gt",
       "threshold": 800,
       "severity": "medium",
-      "value": 68,
+      "value": 120,
       "triggered": false,
       "status": "ok"
     },
@@ -429,6 +429,83 @@
           "status": "ok"
         }
       ]
+    },
+    {
+      "generatedAt": "2026-08-11T04:04:17.164Z",
+      "healthy": 4,
+      "total": 4,
+      "degraded": 0,
+      "averageLatencyMs": 128,
+      "successRate": 100,
+      "routeMetrics": [
+        {
+          "route": "core",
+          "label": "Core",
+          "total": 2,
+          "healthy": 2,
+          "degraded": 0,
+          "averageLatencyMs": 120,
+          "successRate": 100
+        },
+        {
+          "route": "integrations",
+          "label": "Integrations",
+          "total": 1,
+          "healthy": 1,
+          "degraded": 0,
+          "averageLatencyMs": 99,
+          "successRate": 100
+        },
+        {
+          "route": "docs",
+          "label": "Docs",
+          "total": 1,
+          "healthy": 1,
+          "degraded": 0,
+          "averageLatencyMs": 174,
+          "successRate": 100
+        }
+      ],
+      "alerts": [
+        {
+          "id": "overall-success-rate",
+          "label": "Overall success rate",
+          "scope": "summary",
+          "metric": "successRate",
+          "operator": "lt",
+          "threshold": 95,
+          "severity": "high",
+          "value": 100,
+          "triggered": false,
+          "status": "ok"
+        },
+        {
+          "id": "core-latency",
+          "label": "Core latency",
+          "scope": "route",
+          "route": "core",
+          "metric": "averageLatencyMs",
+          "operator": "gt",
+          "threshold": 800,
+          "severity": "medium",
+          "value": 120,
+          "triggered": false,
+          "status": "ok"
+        },
+        {
+          "id": "critical-route-availability",
+          "label": "Critical route availability",
+          "scope": "route",
+          "route": "core",
+          "metric": "successRate",
+          "operator": "lt",
+          "threshold": 100,
+          "severity": "high",
+          "value": 100,
+          "triggered": false,
+          "status": "ok"
+        }
+      ]
     }
   ],
   "checks": [
@@ -440,8 +517,8 @@
       "expectedStatus": 200,
       "status": 200,
       "ok": true,
-      "latencyMs": 95,
-      "checkedAt": "2026-08-10T04:16:28.351Z",
+      "latencyMs": 145,
+      "checkedAt": "2026-08-11T04:04:16.939Z",
       "note": "Endpoint returned the expected response."
     },
     {
@@ -452,8 +529,8 @@
       "expectedStatus": 200,
       "status": 200,
       "ok": true,
-      "latencyMs": 82,
-      "checkedAt": "2026-08-10T04:16:28.414Z",
+      "latencyMs": 99,
+      "checkedAt": "2026-08-11T04:04:16.988Z",
       "note": "Endpoint returned the expected response."
     },
     {
@@ -464,8 +541,8 @@
       "expectedStatus": 204,
       "status": 204,
       "ok": true,
-      "latencyMs": 40,
-      "checkedAt": "2026-08-10T04:16:28.415Z",
+      "latencyMs": 94,
+      "checkedAt": "2026-08-11T04:04:16.989Z",
       "note": "Endpoint returned the expected response."
     },
     {
@@ -476,8 +553,8 @@
       "expectedStatus": 200,
       "status": 200,
       "ok": true,
-      "latencyMs": 106,
-      "checkedAt": "2026-08-10T04:16:28.417Z",
+      "latencyMs": 174,
+      "checkedAt": "2026-08-11T04:04:16.990Z",
       "note": "Endpoint returned the expected response."
     }
   ],
